@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Manipulation App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Document Manipulation App</h1>
+    <form id="validate-form" enctype="multipart/form-data">
+        <label for="file1">File 1:</label>
+        <input type="file" name="file1" accept=".csv, .xlsx" required>
+        <label for="file2">File 2:</label>
+        <input type="file" name="file2" accept=".csv, .xlsx" required>
+        <button type="button" onclick="validateFormat()">Validate Format</button>
+    </form>
+    <div id="result-container"></div>
+
+    <!-- Add similar forms and result containers for other functionalities -->
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
