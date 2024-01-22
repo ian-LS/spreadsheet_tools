@@ -8,13 +8,25 @@ function validateFormat() {
     })
     .then(response => response.json())
     .then(data => {
-        displayResult(data.result);
+        displayResult('validate-result-container', data.result);
     });
 }
 
-// Add similar functions for other functionalities
+function mergeFiles() {
+    let form = document.getElementById('merge-form');
+    let formData = new FormData(form);
 
-function displayResult(result) {
-    let resultContainer = document.getElementById('result-container');
+    fetch('/merge', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        displayResult('merge-result-container', data.result);
+    });
+}
+
+function displayResult(containerId, result) {
+    let resultContainer = document.getElementById(containerId);
     resultContainer.innerHTML = '<h2>Result:</h2><pre>' + result + '</pre>';
 }

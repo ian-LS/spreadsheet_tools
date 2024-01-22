@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Document Manipulation App</h1>
+
     <form id="validate-form" enctype="multipart/form-data">
         <label for="file1">File 1:</label>
         <input type="file" name="file1" accept=".csv, .xlsx" required>
@@ -15,7 +16,16 @@
         <input type="file" name="file2" accept=".csv, .xlsx" required>
         <button type="button" onclick="validateFormat()">Validate Format</button>
     </form>
-    <div id="result-container"></div>
+    <div id="validate-result-container"></div>
+
+    <form id="merge-form" enctype="multipart/form-data">
+        <label for="file1">File 1:</label>
+        <input type="file" name="file1" accept=".csv, .xlsx" required>
+        <label for="file2">File 2:</label>
+        <input type="file" name="file2" accept=".csv, .xlsx" required>
+        <button type="button" onclick="mergeFiles()">Merge Files</button>
+    </form>
+    <div id="merge-result-container"></div>
 
     <!-- Add similar forms and result containers for other functionalities -->
 
