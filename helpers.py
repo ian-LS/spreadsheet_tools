@@ -39,14 +39,3 @@ def read_dataframe(file, **kwargs):
             return pd.DataFrame()  # Return an empty DataFrame if the file is empty
     else:
         raise ValueError("Unsupported file format. Only CSV and Excel (xlsx) files are accepted.")
-
-def read_dataframe_with_skipping(file, **kwargs):
-    # Read CSV with skipping the first row
-    if file.filename.endswith('.csv'):
-        try:
-            return pd.read_csv(file, skiprows=1, **kwargs)
-        except pd.errors.EmptyDataError:
-            return pd.DataFrame()  # Return an empty DataFrame if the file is empty
-    else:
-        # For other formats, use the original read_dataframe function
-        return read_dataframe(file, **kwargs)
